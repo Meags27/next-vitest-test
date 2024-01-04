@@ -1,7 +1,13 @@
 import httpMocks from "node-mocks-http";
 
-import {test} from "vitest"
-import {POST} from "./api/test/route";
+import { test, vi } from "vitest";
+import { POST } from "./api/test/route";
+
+vi.mock("server-only", () => {
+  return {
+    // mock server-only module
+  };
+});
 
 test('can test api', async () => {
   const mockRequestData = { };
